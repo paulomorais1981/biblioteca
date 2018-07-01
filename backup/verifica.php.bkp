@@ -1,0 +1,35 @@
+
+<?php
+
+session_start();
+	if(!isset($_SESSION['usuario'])) { ?>
+		<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+		<div class="navbar-brand">
+		<a class="navbar-item" href="index.php">Início</a></li>
+		<a class="navbar-item" href="login.php">Entrar no sistema</a></li>
+		</div>
+	  </nav>
+		<?php
+
+
+	} else { ?>
+
+		<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+	  <div class="navbar-brand">
+		<p class="navbar-item"><b>Bem-vindo, <?php echo $_SESSION['nome']; ?></b></p>
+		<a class="navbar-item" href="index.php">In&iacute;cio</a>
+		<a class="navbar-item" href="painel.php">Painel</a>
+		<a class="navbar-item" href="lista-leitores.php">Leitores</a>
+		<a class="navbar-item"  href="lista-emprestimo.php">Empr&eacute;stimos</a>
+		<a class="navbar-item" href="inserir.php">Catalogar livro</a>
+		<a class="navbar-item" href="inserir-leitor.php">Cadastrar leitor</a>
+		<a class="navbar-item" href="index.php?acao=sair">Sair</a>
+	</ul></div></nav>
+
+
+
+		<?php
+
+	}
+
+?>

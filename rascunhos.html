@@ -1,0 +1,113 @@
+
+<html>
+<head>
+<LINK REL=StyleSheet HREF="bulma.css" TYPE="text/css">
+</head>
+<body>
+<!--
+<table class="table is-bordered">
+  <thead>
+    <tr>
+      <th><abbr title="Código">Cód</abbr></th>
+      <th>Título</th>
+      <th>Autor</th>
+      <th>Editora</th>
+      <th>Ano</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <th><abbr title="Código">Cód</abbr></th>
+      <th>Título</th>
+      <th>Autor</th>
+      <th>Editora</th>
+      <th>Ano</th>
+    </tr>
+  </tfoot>
+
+  <tbody>
+    <tr>
+      <th>'.$codigo.'</th>
+      <td>.$titulo.'</td>
+      <td>.$titulo.'</td>
+      <td>'.$editora.'</td>
+      <td>'.$ano.'</td>
+    </tr>
+  </tbody>
+
+
+<a class="botaozinho" href="inserir-leitor.php?acao=editar&buscacodigo='.$tbl['ID'].'"><img src="imagens/editar.png" title="Editar registro"></a></li>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        Software <strong>Biblioteca de Todo Mundo</strong> desenvolvido por <a href="http://paulo.viraminas.org.br">Paulo Morais</a>.  O conteúdo deste site é publicado sob licença Creative Commons <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+echo "<ul>";
+echo "<li>[".$codigo."] <a href=\"".$home."/fichalivro.php?id=".$codigo."\">$titulo</a></li>";
+echo "<li>$autor";
+echo "<li>$editora"; if(isset($ano)) echo ", $ano"; echo "</li>";
+echo "</ul>";
+
+
+<section class="hero is-success is-fullheight">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="column is-4 is-offset-4">
+        <h3 class="title has-text-grey">Login</h3>
+        <p class="subtitle has-text-grey">Faça login para continuar.</p>
+        <div class="box">
+
+          <form method="post" action="login.php?action=enviado">
+            <div class="field">
+              <div class="control">
+                <input class="input is-large" type="text" placeholder="Nome de usuário" autofocus="" name="usuario">
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <input class="input is-large" type="password" placeholder="Sua senha" name="senha">
+              </div>
+            </div>
+            <input type="submit" class="button is-block is-info is-large is-fullwidth">Entrar</button>
+          </form>
+        </div>
+
+        <a class="button is-primary" href="<?php echo $home; ?>">Voltar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="field has-addons">
+  <div class="control">
+    <input class="input" type="text" name="busca" placeholder="Digite o termo que deseja encontrar">
+  </div>
+  <div class="control">
+    <input type="submit" value="Buscar" class="button is-primary">
+  </div>
+</div>
+-->
+<form>
+<div class="columns">
+<div class="column">
+<div class="field"><label class="label" for="titulo">Título da Obra</label>
+<div class="control>"><input class="input" type="text" name="titulo" value="Título"></div></div>
+</div>
+<div class="column">
+<div class="field"><label class="label" for="subtitulo">Subtítulo</label>
+<div class="control>"><input class="input" type="text" name="subtitulo" value="Subtítulo"></div></div>
+</div>
+</div>
+<input type="submit" value="Enviar">
+</form>
+</body>
+</html>

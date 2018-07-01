@@ -1,0 +1,352 @@
+#body, #html {
+	font-family: sans-serif;
+	}
+
+#body {
+	background-image: url(imagens/papeldeparede.jpg); 
+
+	}
+	
+
+#livro {
+	width: 800px;
+	padding: 30px 20px 120px 20px;
+	background: #efefef;
+	margin: 20px 0 0 -400px;
+	position: absolute;
+	left: 50%;
+	font-family: sans-serif;
+	}
+
+#livro h2 {
+	color: #550000;
+	}
+
+.linkbotao {
+	text-decoration: none;
+	font-size: 9px;
+	padding: 3px;
+	border-radius: 3px;
+	background: #550000;
+	color: #fff;
+	margin: 0px 5px 0px 5px;
+	font-style: normal;
+	font:sans-serif;
+	}
+
+#livro ul {
+	list-style-type: none;
+	margin-top: -15px;
+	}
+
+.infolivro {
+	text-decoration: italic;
+	color: #216778;
+
+	}
+
+.palavraschave {
+	color: #888;
+	font-size: 11px;
+	font-style: italic;
+	}
+
+#formulario label {
+	width: 200px;
+	float: left;
+	text-align: right;
+	margin-right: 0.5em;
+	display: block;
+	margin-bottom: 10px;
+	padding-top: 7px;
+	}
+
+#formulario input[type="text"], #formulario input[type="email"], #formulario input[type="date"], #formulario select  {
+	border: 1px solid #999;
+	padding: 2px;
+	margin-bottom: 10px;
+	width: 300px;
+	height: 30px;
+	}
+
+#botoes-formulario {
+	margin-left: 200px;
+	margin-top: 50px;
+
+	}
+
+#botoes-formulario input[type="reset"] {
+	background: red;
+	color: #000;
+	border: solid 1px #999;
+ 	padding: 3px 10px 3px 10px;
+	font-size: 14px;
+	}
+
+#botoes-formulario input[type="submit"] {
+	background: green;
+	color: #000;
+	border: solid 1px #999;
+ 	padding: 3px 10px 3px 10px;
+	font-size: 14px;
+	}
+
+
+#navbar {
+	width: 100%;
+	height: 20px;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0 0 60px 0;
+	padding: 4px 4px 4px 20px;
+	background: #333;
+	color: #fff;
+	font-size: 14px;
+	font-family: sans-serif;
+	text-decoration: bold;
+	}
+
+#navbar a, a:visited {
+	text-decoration: none;
+	margin-right: 20px;
+	color: #999;
+	}
+
+#mensaginha {
+	margin-right: 20px;
+	display: inline;
+	font-weight: bold;
+	}
+
+#conteudo {
+	width: 800px;
+	padding: 30px 20px 30px 20px;
+	background: #efefef;
+	margin: 20px 0 0 -400px;
+	position: absolute;
+	left: 50%;
+	font-family: sans-serif;
+	text-align: center;
+	}
+
+#conteudo a, a:visited {
+	color: #550000;
+	}
+
+#conteudo label {
+	display: inline;
+	width: 400px;
+	margin-right: 20px;
+	}
+
+#conteudo input, #conteudo select, #conteudo option {
+	border: 1px solid #bbb;
+	padding: 4px 10px 4px 10px;
+	background: #222;
+	color: #fff;
+	height: 28px;
+	}
+
+#conteudo input[type='text'] {
+	width: 400px;
+	background: #eee;
+	color: #222;
+	height: 28px;
+	}
+
+#login {
+	border-radius: 10px;
+	text-align: center;
+	background: #ddd;
+	height:300px; 
+	left:50%; 
+	margin:-150px 0 0 -175px; 
+	position:absolute; 
+	top:50%; 
+	width:350px;
+	}
+
+#conteudo img, #login img {
+	margin: 20px; 10px; 20px; 10px;
+	}
+	
+#login input {
+	padding: 4px 10px 4px 10px;
+	border: 1px solid #bbb;
+	background: #eee;
+	color: #222;
+	margin-bottom: 10px;
+	}
+
+	
+#login label {
+	display: inline-block;
+	text-align: left;
+	width: 70px;
+	}
+
+#lista {
+	width: 800px;
+	padding: 30px 20px 30px 20px;
+	background: #efefef;
+	margin: 20px 0 0 -400px;
+	position: absolute;
+	left: 50%;
+	font-family: sans-serif;
+	}
+
+#lista ul {
+	list-style-type: none;
+	}
+
+#lista li {
+	display: table-cell;
+	padding: 3px 10px 3px 10px;
+	background: #ADADAD;
+	margin: 0px 2px 0px 0px;
+	width: 220px;
+	height: 50px;
+	overflow: hidden;
+	vertical-align: middle;
+	}
+
+
+
+.logo {
+	width: 600px;
+	left: 50%;
+	margin-left: -300px;
+	position: relative;
+	}
+
+.logomenor {
+	width: 320px;
+	left: 78%;
+	margin-left: -160px;
+	position: absolute;
+	top: 90%;
+	margin-top: -50px;
+	}
+
+#lista-emprestimo {
+	width: 870px;
+	padding: 30px 20px 30px 20px;
+	background: #efefef;
+	margin: 20px 0 0 -400px;
+	position: absolute;
+	left: 50%;
+	font-family: sans-serif;
+	}
+
+#lista-emprestimo ul {
+	list-style-type: none;
+	}
+
+#lista-emprestimo li {
+	display: table-cell;
+	margin: 10px; 
+	overflow: hidden;}
+
+.tabela-numero {
+	width: 35px;
+	font-size: 10px;
+	color: #000;
+	background: #FFFACD;
+	padding: 5px;
+	border-radius: 3px;
+	font-weight: bold;
+	text-align: center;
+	}
+
+.tabela-icone {
+	width: 25px;
+
+	}
+
+.tabela-data {
+	width: 95px;
+	}
+
+.tabela-nome {
+	width: 275px;
+	padding-left: 10px;
+	}
+
+#navbar ul {
+	list-style-type: none;
+	margin: 3px 0px 0px 0px;
+	padding: 0px 0px 0px 5px;
+	}
+
+#navbar li {
+	display: inline;
+	margin: 5px 20px 5px 0px;
+	font-weight: bold;
+	}
+
+#navbar a:hover {
+	color: #fff;
+	text-decoration: none;
+	}
+
+.botaozinho {
+	margin-left: 10px;
+	}
+
+#painel {
+	width: 800px;
+	padding: 30px 20px 30px 20px;
+	background: #efefef;
+	margin: 20px 0 0 -400px;
+	position: absolute;
+	left: 50%;
+	font-family: sans-serif;
+	}
+
+#painel input[type="text"], #painel input[type="password"] {
+	padding: 4px 10px 4px 10px;
+	border: 1px solid #ddd;
+	width: 200px;
+	}
+
+#painel form {
+	padding: 20px;
+	border: 1px solid #bbb;
+	}
+
+.mensagem-ok {
+	padding: 20px 20px 20px 80px;
+	border: 1px solid #bbb;
+	background: #fff url('imagens/mensagem-ok.png') no-repeat 20px }
+
+#alerta {
+	padding: 20px 20px 20px 80px;
+	border: 1px solid #bbb;
+	background: #fff url('imagens/alerta.png') no-repeat 20px }
+
+.painelmensagem {
+	padding: 20px;
+	border: 1px solid #ddd; 
+	background: #fff;
+	margin-bottom: 20px;
+	}
+
+.mensageiro {
+	list-style-type: none;
+	padding: 10px 10px 10px 10px;
+	width: 80%;
+	background: #ccc;
+	border-radius: 5px;
+	}
+
+.remetente {
+	font-size: 10px;
+	}
+
+.botao {
+	padding: 10px;
+	border-radius: 5px;
+	background: #ccc;
+	}
