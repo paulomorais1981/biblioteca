@@ -9,6 +9,17 @@ require_once("config.php");
 require_once("verifica.php");
 require_once("funcoes.php");
 cabecalho();
+
+// carregar as categorias no banco de dados
+$consulta = "SELECT id, nome FROM `categorias`";
+$result = mysqli_query($link,$consulta);
+$opcoes = '<div class=select><select name="localizacao" value="'.$localizacao.'">';
+while ($row = $result->fetch_assoc()) {
+  $opcoes .= '<option value="'.$row['id'].'">'.$row['nome'].'</option>';
+}
+$opcoes .='</select></div>';
+$result->close();
+
 echo '<section class="section">';
 if (!isset($_SESSION['usuario'])) {
     echo 'Desculpe, voce nao esta autorizado a editar estas informacoes';
@@ -73,7 +84,7 @@ if (!isset($_SESSION['usuario'])) {
 
           if ($tbl = mysqli_fetch_array($result)) {
 
-            // Armazena os dados para preencher no formulï¿½rio a seguir
+            // Armazena os dados para preencher no formulário a seguir
               // $codigo  = $tbl["ID"];
 
               $titulo = $tbl["titulo"];
@@ -120,7 +131,6 @@ if (!isset($_SESSION['usuario'])) {
 
       echo '<form id="formulario" method="POST" action="gerencia-registro.php?acao='.$AcaoForm.'">';
       echo '<div class="columns"><div class="column">';
-      listaautores();
       if ($AcaoForm == "alterar") {
           echo '<div class="field"><label for="codigo">Código (auto)</label><INPUT type="text" name="codigo" value='.$codigo.'></div>';
       } ?>
@@ -182,8 +192,9 @@ if (!isset($_SESSION['usuario'])) {
 
 </div>
 <div class="column">
-   <div class="field"><label class="label" for="localizacao">Localização</label><input class="input" type="text" name="localizacao" list="localizacao" value="<?php
-    echo $localizacao; ?>"></div>
+  <div class="field"><label class="label" for="localizacao">Localização</label>
+    <?php echo $opcoes; ?>
+  </div>
 
    <div class="field"><label class="label" for="observacao">Observação</label><input class="input" type="text" name="observacao" value="<?php
     echo $observacao; ?>"></div>

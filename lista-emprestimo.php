@@ -7,7 +7,6 @@
 
 <?php
   require_once("config.php");
-  require_once("verifica.php");
   require_once("funcoes.php");
   cabecalho();
   echo '<section class="section">';

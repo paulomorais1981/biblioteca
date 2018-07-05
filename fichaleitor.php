@@ -1,16 +1,16 @@
 <html lang='pt-br'>
 <head>
-<link rel=StyleSheet href="bulma.css" type="text/css">
-<meta http-equiv="Content-Type" content="text/html; charset=latin1" />
+  <title>Biblioteca de Todo Mundo</title>
+  <link rel=StyleSheet href="bulma.css" type="text/css">
+  <meta http-equiv="Content-Type" content="text/html; charset=latin1" />
 </head>
 <body>
 
 <?php
 require_once("config.php");
-require_once("verifica.php");
 require_once("funcoes.php");
-
-  if(!isset($_SESSION['usuario'])) { die('<div class="notification is-warning>Você não está autorizado a editar estas informações.</div>"');}
+cabecalho();
+  // if(!isset($_SESSION['usuario'])) { die('<div class="notification is-warning>Você não está autorizado a editar estas informações.</div>"');}
 
   $id = $_GET['id'];
   $pontos = 0;
@@ -27,7 +27,7 @@ require_once("funcoes.php");
   $historico.= '<tr><td>'.$nomelivro.'</td><td>'.$tabela['livro'].'</td></tr>';
   }
   $historico .= '</table></div></div>';
-  $historico .= '<div class="column"></div></div></div></section>';
+  $historico .= '<div class="column"></div></div></div></div></div></section>';
 
   # Cria a expressão SQL de consulta aos registros
   $cons="SELECT * FROM usuarios WHERE ID = '".$id."'";
@@ -48,7 +48,9 @@ require_once("funcoes.php");
   $desde=$tbl['desde'];
   $cidade=$tbl['cidade'].' ('.$tbl['estado'].')';
   echo '<section class="section">';
-  echo '<h1 class="title">'.$nome.'</h1>
+  echo '<div class="columns">
+  <div class="column is-offset-1">
+  <h1 class="title">'.$nome.'</h1>
   <div class="field is-grouped is-grouped-multiline">
   <div class="control"><div class="tags has-addons"><span class="tag is-small">código </span><span class="tag is-primary is-small">'.$id.'</span></div></div>
   <div class="control"><div class="tags has-addons"><span class="tag is-small">pontuação </span><span class="tag is-primary is-small">'.$pontos.'</span></div></div>
@@ -57,7 +59,7 @@ require_once("funcoes.php");
   <div class="columns">
   <div class="column">
   <div class="box">
-  <h4 class="subtitle is-4">Dados pessoais    </h4>
+  <h4 class="subtitle is-4">Dados pessoais</h4>
 
   <table class="table is-bordered">
   <tr>
@@ -86,5 +88,6 @@ require_once("funcoes.php");
   echo $historico;
 
 mysqli_close();
+  rodape();
 ?>
 </body>

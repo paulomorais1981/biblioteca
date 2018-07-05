@@ -1,14 +1,15 @@
 <html lang='pt-br'>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=latin1" />
-<link rel=StyleSheet href="bulma.css" type="text/css">
+  <title>Biblioteca de Todo Mundo</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=latin1" />
+  <link rel=StyleSheet href="bulma.css" type="text/css">
 </head>
 <body>
+
 <?php
 
   require_once("config.php");
   require_once("funcoes.php");
-  require_once("verifica.php");
   cabecalho();
 
   if (isset($_POST['busca'])) {
@@ -35,6 +36,7 @@
         <th>Autor</th>
         <th>Editora</th>
         <th>Ano</th>
+        <th>Localização</th>
         <th>Situação</th>
       </tr>
     </thead>
@@ -45,12 +47,13 @@
         <th>Autor</th>
         <th>Editora</th>
         <th>Ano</th>
+        <th>Localização</th>
         <th>Situação</th>
       </tr>
     </tfoot><tbody>';
 
   $result = mysqli_query($link, $sql);
-  $tbl = $result->fetch_array();
+  while ($tbl = $result->fetch_array()) {
       $codigo  = $tbl["ID"];
       $titulo   = $tbl["titulo"];
       $subtitulo = $tbl["subtitulo"];
@@ -80,18 +83,25 @@
       $termo="SELECT * FROM emprestimos WHERE livro = '". $codigo ."' AND ativo = '1'";
       $consulta = mysqli_query($link,$termo);
       if( mysqli_num_rows($consulta) == 1 ) { $emprestado='<span class="tag is-warning is-small">Emprestado</span>'; } else {$emprestado='<span class="tag is-success is-small">Disponível</span>';}
+      $consulta->close();
 
+      $termo="SELECT cor,sigla FROM `categorias` WHERE id =".$localizacao;
+      $consulta = mysqli_query($link, $termo);
+      $row = $consulta->fetch_assoc();
+      $sigla = '<span class="tag is-small" style="background:'.$row['cor'].';">'.$row['sigla'].'</span>';
+      $consulta->close();
       echo '<tr>
             <th>'.$codigo.'</th>
             <td>'.$titulo.'</td>
             <td>'.$autor.'</td>
             <td>'.$editora.'</td>
             <td>'.$ano.'</td>
+            <td>'.$sigla.'</td>
             <td>'.$emprestado.'</td>
           </tr>
-          ';
+          ';}
   $result->close();
-  
+
   echo "</tbody></table></div></section>";
   rodape();
 ?>

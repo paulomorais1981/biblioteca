@@ -20,40 +20,6 @@ function codificadata($ymd) {
 	return $data;
 }
 
-function botoesedicao($codigo) {
-	if(isset($_SESSION['usuario'])) {
-	echo '<A class="botaozinho" href="inserir.php?acao=editar&buscacodigo='.$codigo.'"><img src="imagens/editar.png" title="Editar registro"></A><A class="botaozinho" href="inserir.php?acao=duplicar&buscacodigo='.$codigo.'"><img src="imagens/duplicar.png" title="Duplicar registro"></A><A class="botaozinho" href="gerencia-registro.php?acao=excluir&buscacodigo='.$codigo.'"><img src="imagens/excluir.png" title="Excluir registro"></A>'; }
-	}
-
-function listaautores() {
-	$sql = mysqli_query($link,"SELECT DISTINCT autor FROM livros");
-	echo '<datalist id="autores">';
-	while ($tbl = mysqli_fetch_array($sql)) {
-		echo '<option>'.$tbl['autor'].'</option>';
-	}
-	echo '</datalist>';
-
-	$sql2 = mysqli_query($link,"SELECT DISTINCT editora FROM livros");
-	echo '<datalist id="editoras">';
-	while ($tbl = mysqli_fetch_array($sql2)) {
-		echo '<option>'.$tbl['editora'].'</option>';
-	}
-	echo '</datalist>';
-
-	$sql3 = mysqli_query($link,"SELECT DISTINCT localizacao FROM livros");
-	echo '<datalist id="localizacao">';
-	while ($tbl = mysqli_fetch_array($sql3)) {
-		echo '<option>'.$tbl['localizacao'].'</option>';
-	}
-	echo '</datalist>';
-
-	$sql4 = mysqli_query($link,"SELECT DISTINCT condicao FROM livros");
-	echo '<datalist id="condicao">';
-	while ($tbl = mysqli_fetch_array($sql3)) {
-		echo '<option>'.$tbl['condicao'].'</option>';
-	}
-	echo '</datalist>'; }
-
 function rodape() {
   $footer = '<footer class="footer">
 	  <div class="container">
@@ -95,6 +61,7 @@ function cabecalho() {
 		 <a class="navbar-item has-text-centered"  href="lista-emprestimo.php">Empréstimos</a>
 		 <a class="navbar-item has-text-centered" href="inserir.php">Catalogar livro</a>
 		 <a class="navbar-item has-text-centered" href="inserir-leitor.php">Cadastrar leitor</a>
+		 <a class="navbar-item has-text-centered" href="categorias.php">Gerenciar categorias</a>
 		 <a class="navbar-item has-text-centered" href="index.php?acao=sair">Sair</a>
 		 </div></div></nav>'; }
 
